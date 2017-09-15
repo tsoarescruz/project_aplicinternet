@@ -68,22 +68,15 @@
 
 				<div class="row">
 					<div class="form-group col-md-12 col-sm-12">
-						<label for="email">email*:</label>
-						<!-- USANDO HTML 5.0 para o tipo email - problema para personalizar mensagens de erro -->
-						<input type="email" class="form-control" name="email" maxlength="30" size="30" placeholder="usuario@meudominio.com" required
-							pattern=“[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$” title="Informe um e-mail válido" />
-					</div>
-				</div>
+						<!--<label for="email">email*:</label>-->
+						<!--&lt;!&ndash; USANDO HTML 5.0 para o tipo email - problema para personalizar mensagens de erro &ndash;&gt;-->
+						<!--<input type="email" class="form-control" name="email" maxlength="30" size="30" placeholder="usuario@meudominio.com" required-->
+							<!--pattern=“[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$” title="Informe um e-mail válido" />-->
 
-				<div class="row">
-					<div class="form-group col-md-6 col-sm-6">
-						<label for="senha">Senha*:</label>
-						<input type="password" id="senha" class="form-control" name="senha" maxlength="8" size="8" />
-					</div>
-
-					<div class="form-group col-md-6 col-sm-6">
-						<label for="confirmasenha">Confirmar Senha*:</label>
-						<input type="password" id="confirmasenha" class="form-control" name="confirmasenha" maxlength="8" size="8" />
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="email" maxlength="30" size="30" placeholder="email" aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2">@example.com</span>
+                      </div>
 					</div>
 				</div>
 
@@ -121,6 +114,23 @@
 					</div>
 				</div>
 
+              <div class="row">
+					<!--<div class="form-group col-md-6 col-sm-6">-->
+						<!--<label for="senha">Senha*:</label>-->
+						<!--<input type="password" id="senha" class="form-control" name="senha" maxlength="8" size="8" />-->
+					<!--</div>-->
+
+                    <div class="form-group col-md-3 col-sm-3">
+                        <label for="pwd">Senha:</label>
+                        <input type="password" id="senha" class="form-control" name="senha" maxlength="8" size="8" />
+                    </div>
+
+					<div class="form-group col-md-3 col-sm-3">
+						<label for="pwd">Confirmar Senha*:</label>
+						<input type="password" id="confirmasenha" class="form-control" name="confirmasenha" maxlength="8" size="8" />
+					</div>
+              </div>
+
 				<div class="row">
 					<div class="form-group col-md-4 col-sm-6">
 						<label>Telefone para Contato*:</label>
@@ -133,86 +143,88 @@
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="form-group col-md-8 col-sm-8">
-						<label for="cbocategoria">Tipo de Endereço*:</label>
-						<select name="cbocategoria" id=cbocategoria class="form-control">
-							<option value="0"> </option>
-							<option value="1">Casa</option>
-							<option value="2">Apartamento</option>
-							<option value="3">Comercial</option>
-							<option value="4">Outros</option>
-						</select>
-					</div>
-					<div class="form-group col-md-4 col-sm-4">
-						<label for="inputdefault">CEP*:</label>
-						<input type="text" id="cep" class="form-control" name="cep" maxlength="10" size="10" />
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="form-group col-md-8 col-sm-8">
-						<label for="inputdefault">Endereço*:</label>
-						<input type="text" class="form-control" name="endereco" maxlength="50" size="50" />
-					</div>
-
-					<div class="form-group col-md-4 col-sm-4">
-						<label for="inputdefault">Número*:</label>
-						<input type="text" class="form-control sonums" name="numero" maxlength="6" size="5" />
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="form-group col-md-12 col-sm-12">
-						<label for="inputdefault">Complemento(opcional):</label>
-						<input type="text" class="form-control" name="complemento" maxlength="50" size="50" />
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="form-group col-md-4 col-sm-4">
-						<label for="inputdefault">Bairro*:</label>
-						<input type="text" class="form-control" name="bairro" maxlength="25" size="25" />
-					</div>
-
-					<div class="form-group col-md-4 col-sm-4">
-						<label for="inputdefault">Cidade*:</label>
-						<input type="text" class="form-control" name="cidade" maxlength="25" size="25" />
-					</div>
-
-					<div class="form-group col-md-4 col-sm-4">
-						<label for="inputdefault">Estado*:</label>
-						<select name="cboestado" id="cboestado" class="form-control">
-					<option value="" ></option>
-					<option value="rj">RJ</option>
-					<option value="mg">MG</option>
-					<option value="sp">SP</option>
-					<option value="es">ES</option>
-				</select>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="form-group col-md-12 col-sm-12">
-						<label for="inputdefault">Informações de Referência*:</label>
-						<input type="text" class="form-control" name="inforef" maxlength="50" size="50" />
-					</div>
-				</div>
-
-                <!-- Separação btn -->
-                <div class="row">
-                      <div class="form-group col-md-12 col-sm-12">
-
+              <fieldset>
+                <legend class="control-label">Dados de Endereço</legend>
+                  <div class="row">
+                      <div class="form-group col-md-8 col-sm-8">
+                          <label for="cbocategoria">Tipo de Endereço*:</label>
+                          <select name="cbocategoria" id=cbocategoria class="form-control">
+                              <option value="0"> </option>
+                              <option value="1">Casa</option>
+                              <option value="2">Apartamento</option>
+                              <option value="3">Comercial</option>
+                              <option value="4">Outros</option>
+                          </select>
                       </div>
-                </div>
+                      <div class="form-group col-md-4 col-sm-4">
+                          <label for="inputdefault">CEP*:</label>
+                          <input type="text" id="cep" class="form-control" name="cep" id="cep" maxlength="10" size="10" />
+                      </div>
+                  </div>
 
-				<div class="row">
-					<div class="col-md-12 col-sm-12">
-						<input type="submit" id="btenviarcliente" value="Enviar" class="btn btn-primary" />
-						<input type="button" class="btn btn-default btlimpar" value="Limpar" />
-						<input type="button" class="btn btn-default btvoltar" value="Voltar" />
-					</div>
-				</div>
+                  <div class="row">
+                      <div class="form-group col-md-8 col-sm-8">
+                          <label for="inputdefault">Endereço*:</label>
+                          <input type="text" class="form-control" name="endereco" id="endereco" maxlength="50" size="50" />
+                      </div>
+
+                      <div class="form-group col-md-4 col-sm-4">
+                          <label for="inputdefault">Número*:</label>
+                          <input type="text" class="form-control sonums" name="numero" id="numeroendereco" maxlength="6" size="5" />
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="form-group col-md-12 col-sm-12">
+                          <label for="inputdefault">Complemento(opcional):</label>
+                          <input type="text" class="form-control" name="complemento" id="complemento"maxlength="50" size="50" />
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="form-group col-md-4 col-sm-4">
+                          <label for="inputdefault">Bairro*:</label>
+                          <input type="text" class="form-control" name="bairro" id="bairro" maxlength="25" size="25" />
+                      </div>
+
+                      <div class="form-group col-md-4 col-sm-4">
+                          <label for="inputdefault">Cidade*:</label>
+                          <input type="text" class="form-control" name="cidade" id="cidade" maxlength="25" size="25" />
+                      </div>
+
+                      <div class="form-group col-md-4 col-sm-4">
+                          <label for="inputdefault">Estado*:</label>
+                          <select name="cboestado" id="cboestado" class="form-control">
+                      <option value="" ></option>
+                      <option value="rj">RJ</option>
+                      <option value="mg">MG</option>
+                      <option value="sp">SP</option>
+                      <option value="es">ES</option>
+                  </select>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="form-group col-md-12 col-sm-12">
+                          <label for="inputdefault">Informações de Referência*:</label>
+                          <input type="text" class="form-control" name="inforef" maxlength="50" size="50" />
+                      </div>
+                  </div>
+              </fieldset>
+            <!-- Separação btn -->
+            <div class="row">
+                  <div class="form-group col-md-12 col-sm-12">
+
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <input type="submit" id="btenviarcliente" value="Enviar" class="btn btn-primary" />
+                    <input type="button" class="btn btn-default btlimpar" value="Limpar" />
+                    <input type="button" class="btn btn-default btvoltar" value="Voltar" />
+                </div>
+            </div>
 
                <!-- Separação do Footer -->
                 <div class="row">
