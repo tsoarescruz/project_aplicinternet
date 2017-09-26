@@ -66,9 +66,9 @@ $(function() {
     
     
     /*Regras de validação dos campos do form CLIENTE - biblioteca JQUERY VALIDATION*/
-    $("#formcliente").validate({ //usa o name dos campos do form
+    $("#formcliente").validate({
         rules: {
-            //email:{required: true, email:true},
+            email:{required: false},
             nome:{required: true, minlength: 4},
             senha:{required:true, minlength: 6},
             confirmasenha:{required:true, minlength: 6, equalTo:"#senha"},
@@ -121,7 +121,7 @@ $(function() {
         rules: {
 
         	cnpj:{required: true, minlength: 6},
-        	email:{required: true},
+        	email:{required: false},
         	nome:{required: true},
         	dtcadastro:{required: true, dateBR:true},
         	telefone:{required: true},
@@ -220,7 +220,7 @@ $(function() {
     QUANDO A PÁGINA FOR CARREGADA PELA CONSULTA - OBJETIVO DE EXBIR O TAMANHO*/
     
     /*Limpar campos de um form quando o usuário clicar no botão Limpar */    
-    $(".btlimpar").click(function(){
+    $(".btnlimpar").click(function(){
     	$('form').each (function(){
     		  this.reset();
     	});
