@@ -12,4 +12,8 @@ body {
     body {
         padding-top: 56px;
     }
+.navbar-brand{
+    font-size: 40px;
+    line-height: 30px;
+}
 }
