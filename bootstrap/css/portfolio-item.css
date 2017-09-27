@@ -14,6 +14,13 @@ body {
     }
 }
 
+header{
+	background-image: url("http://placehold.it/500x300");
+	background-size: cover;
+	background-position: top center;
+	height: 100%;
+	position: relative;
+}
 
 .topbanner{
 	color: #FFF;
