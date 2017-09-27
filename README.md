@@ -1,4 +1,4 @@
-# Aplicação Internet UVA 2017.2
+﻿# Aplicação Internet UVA 2017.2
 
 ### Alguns Comandos do GIT
 
@@ -79,3 +79,11 @@ git push origin <nome_do_branch>
 ```bash
 git checkout <nome_do_arquivo>
 ```
+
+(9) Como Logar no git a partir do terminal
+
+git config --global user.name "Your Name"
+
+git config --global user.email "youremail@domain.com"
+
+Adicionando chave ssh ao git > seguir o procedimento "https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
