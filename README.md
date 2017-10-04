@@ -87,3 +87,7 @@ git config --global user.name "Your Name"
 git config --global user.email "youremail@domain.com"
 
 Adicionando chave ssh ao git > seguir o procedimento "https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
+
+
+(10) Template
+Template para verificar - https://github.com/lemonstand/lscloud-theme-laboutique
