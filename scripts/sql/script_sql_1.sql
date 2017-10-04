@@ -1,6 +1,5 @@
 drop database if exists lojaonline;
 
-
 create database lojaonline;
 
 use lojaonline;
@@ -11,7 +10,7 @@ nome_cliente varchar(20) not null,
 senha varchar (20) not null,
 perfil char(3) not null,
 datcadastro timestamp
-)
+);
 
 //desc usuario;
 
@@ -31,35 +30,45 @@ estado varchar(2),
 inf_ref varchar(50),  
 sexo enum('M', 'F', 'O'),
 dtnascimento date,
-foreign key (id_email) references usuario (email))
+foreign key (id_email) references usuario (email)
+);
 
 create table Produto(
 codigo int auto_increment primary key,
 descricao varchar(100),
 categoria int,
 marca varchar(40),
-nome varhcar(20),
-preco float,
-constraint pk_produto primary key (id_produto)
-)
+nome varchar(20),
+//tamroupa varchar(3),
+//ntamroupa int,
+//tamcalcado int,  
+preco double(10,2) not null,
+percdesconto double (2,1),
+  
+constraint pk_produto primary key (codigo),
+foreign key (id_email) references usuario (email),
+);
 
-create table Entregador(
-id_entregador int,
-cpf_entregador varchar(15),
-nome_entregador varchar(20),
-disponivel tinyint,
-constraint pk_entregador primary key(id_entregador)
-)
+//create table Entrega(
+//id_entregador int,
+//cpf_entregador varchar(15),
+//nome_entregador varchar(20),
+//disponivel tinyint,
+//constraint pk_entregador primary key(id_entregador)
+//);
 
-create table Venda(
-id_venda int,
-id_cliente int,
-preco_venda float,
+create table Pedido(
+id_pedido int,
+cpf bigint,
+preco_venda double,
+
 constraint pk_venda primary key (id_venda),
 constraint fg_venda_cliente foreign key (id_cliente) references Cliente(id_cliente)
-)
 
-create table iten_venda(
+foreign key (cpf) references usuario (cliente),
+);
+
+create table iten_pedido(
 id_registro int,
 id_cliente int,
 id_venda int,
