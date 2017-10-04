@@ -1,12 +1,18 @@
-create table Cliente(
-id_cliente int,
-cpf_cliente varchar(15),
-nome_cliente varchar(20),
-telefone_cliente varchar(10),
-endereco_cliente varchar(25),
-sexo_cliente     varchar(10),
-constraint pk_cliente primary key (id_cliente)
+drop database idf esxists lojaonline;
+
+create database lojaonline;
+
+use lojaonline;
+
+create table usuario(
+email varchar(50) primary key,
+nome_cliente varchar(20) not null,
+senha varchar (20) not null,
+perfil char(3) not null,
+datcadastro timestamp
 )
+
+desc usuario;
 
 create table Produto(
 id_produto int,
@@ -22,7 +28,6 @@ nome_entregador varchar(20),
 disponivel tinyint,
 constraint pk_entregador primary key(id_entregador)
 )
-
 
 create table Venda(
 id_venda int,
