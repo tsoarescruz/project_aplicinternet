@@ -1,4 +1,5 @@
-drop database idf esxists lojaonline;
+drop database if exists lojaonline;
+
 
 create database lojaonline;
 
@@ -12,11 +13,32 @@ perfil char(3) not null,
 datcadastro timestamp
 )
 
-desc usuario;
+//desc usuario;
+
+create table Cliente(
+cpf bigint primary key,
+id_email varchar(50) not null,
+nome varchar(20),
+telefone varchar(15),
+celular varchar(15),
+dtnnasc date,
+endereco varchar(50),
+numero int,
+complemento varchar (50),
+bairro varchar(25),
+cidade varchar(25),
+estado varchar(2),
+inf_ref varchar(50),  
+sexo enum('M', 'F', 'O'),
+dtnascimento date,
+foreign key (id_email) references usuario (email))
 
 create table Produto(
-id_produto int,
-nome_produto varhcar(20),
+codigo int auto_increment primary key,
+descricao varchar(100),
+categoria int,
+marca varchar(40),
+nome varhcar(20),
 preco float,
 constraint pk_produto primary key (id_produto)
 )
@@ -37,7 +59,7 @@ constraint pk_venda primary key (id_venda),
 constraint fg_venda_cliente foreign key (id_cliente) references Cliente(id_cliente)
 )
 
-create table registro(
+create table iten_venda(
 id_registro int,
 id_cliente int,
 id_venda int,
