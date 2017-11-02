@@ -20,3 +20,4 @@ coverage.xml
 test_results.xml
 <fdopen>
 oracle.db
+/build/

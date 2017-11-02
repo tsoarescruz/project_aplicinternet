@@ -5,9 +5,10 @@
 
     <meta charset="utf-8">
 
+
     <title>Pharmácia</title>
 
- <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -37,7 +38,7 @@
 
   <body>
 
- <!-- Navigation -->
+  <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Pharmácia</a>
@@ -52,33 +53,31 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../template/Sobre.html">Sobre</a>
+              <a class="nav-link" href="jsp/Sobre.html">Sobre</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Cadastro
               </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  
-                  <a class="dropdown-item" href="../template/CadastroCliente.html">Clientes</a>
-                  <a class="dropdown-item" href="../template/CadastroFornecedores.html">Fornecedores</a>
-				  <a class="dropdown-item" href="../template/CadastroFuncionarios.html">Funcionários</a>
-				  <a class="dropdown-item" href="../template/CadastroProdutoS.html">Produtos</a>
-				
-				</div>
+                  <a class="dropdown-item" href="jsp/CadastroProduto.html">Produto</a>
+                  <a class="dropdown-item" href="jsp/CadastroCliente.html">Cliente</a>
+                  <a class="dropdown-item" href="jsp/CadastroFornecedores.html">Fornecedores</a>
+                </div>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+
 <!-- Page Content -->
 
 <section id="main" class="container">
-	<form name="formcliente" id="formcliente" action="" method="post">
+	<form name="formfuncionario" id="formfuncionario" action="" method="post">
 
 			<fieldset>
-				<legend class="control-label">Dados do Cliente</legend>
+				<legend class="control-label">Dados do Funcionário</legend>
 
 				<div class="row">
 					<div class="form-group col-md-12 col-sm-12">
@@ -88,7 +87,7 @@
 							<!--pattern=“[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$” title="Informe um e-mail válido" />-->
 
                       <div class="input-group">
-                        <input type="text" class="form-control" name="email" id=email maxlength="30" size="30" placeholder="usuario@example.com" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="email" id=email maxlength="30" size="30" placeholder="email" aria-describedby="basic-addon2">
                         <span class="input-group-addon" id="basic-addon2">@example.com</span>
                       </div>
 					</div>
@@ -97,7 +96,7 @@
 				<div class="row">
 					<div class="form-group col-md-12 col-sm-12">
 						<label for="nome">Nome Completo*:</label>
-						<input type="text" class="form-control" name="nome" id="nome" maxlength="50" size="50"/>
+						<input type="text" class="form-control" name="nome" id="nome" maxlength="50" size="50" />
 					</div>
 				</div>
 
@@ -116,7 +115,7 @@
 
 					<div class="form-group col-md-4 col-sm-4">
 						<label for="cpf">CPF*:</label>
-						<input type="text" id="cpf" class="form-control" name="cpf" maxlength="14"/>
+						<input type="text" id="cpf" class="form-control" name="cpf" maxlength="14" />
 					</div>
 
                     <!--Ver essa validacao de data no lojaonlineJQ.js
@@ -126,8 +125,7 @@
 						<label for="datanascimento">Data de Nascimento*:</label>
 							<div class="input-group date">
 								<input id="dtnasc" type="text" class="form-control">
-
-								<!--
+								<!-- value="18/09/2017"
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-calendar"></span>
 								</div>-->
@@ -141,7 +139,7 @@
 					</script>
 				</div>
 
-              <div class="row">
+              <!--<div class="row">
 
                     <div class="form-group col-md-4 col-sm-3">
                         <label for="pwd">Senha:</label>
@@ -150,19 +148,19 @@
 
 					<div class="form-group col-md-4 col-sm-3">
 						<label for="pwd">Confirmar Senha*:</label>
-						<input type="password" id="confirmasenha" class="form-control" name="confirmasenha" maxlength="8" size="8"/>
+						<input type="password" id="confirmasenha" class="form-control" name="confirmasenha" maxlength="8" size="8" />
 					</div>
-              </div>
+              </div>-->
 
 				<div class="row">
 					<div class="form-group col-md-4 col-sm-6">
 						<label for="telcontato">Telefone para Contato*:</label>
-						<input type="text" id="telefone" class="form-control" name="telefone" maxlength="14"/>
+						<input type="text" id="telefone" class="form-control" name="telefone" maxlength="14" />
 					</div>
 
 					<div class="form-group col-md-4 col-sm-6">
 						<label for="telcelular">Celular(opcional):</label>
-						<input type="text" id="celular" class="form-control" name="celular" maxlength="15"/>
+						<input type="text" id="celular" class="form-control" name="celular" maxlength="15" />
 					</div>
 				</div>
 
@@ -267,8 +265,8 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <input type="submit" id="btenviarcliente" value="Enviar" class="btn btn-primary" />
-                    <input type="button" class="btn btn-default btnlimpar" value="Limpar" />
-                    <input type="button" class="btn btn-default btnvoltar" value="Voltar" />
+                    <input type="button" class="btn btn-default btlimpar" value="Limpar" />
+                    <input type="button" class="btn btn-default btvoltar" value="Voltar" />
                 </div>
             </div>
 
@@ -293,11 +291,11 @@
     <!-- /.container -->
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/popper/popper.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
+ <!-- Bootstrap core Java -->
+<link src="../vendor/jquery/jquery.min.js">
+<link src="../vendor/popper/popper.min.js">
+<link src="../vendor/bootstrap/js/bootstrap.min.js">
 
 </body>
 </html>

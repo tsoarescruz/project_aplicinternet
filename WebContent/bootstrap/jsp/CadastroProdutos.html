@@ -4,7 +4,9 @@
   <head>
 
     <meta charset="utf-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="deion" content="">
+    <meta name="author" content="">
 
     <title>Pharmácia</title>
 
@@ -53,16 +55,16 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="template/Sobre.html">Sobre</a>
+              <a class="nav-link" href="jsp/Sobre.html">Sobre</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Cadastro
               </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="template/CadastroProduto.html">Produto</a>
-                  <a class="dropdown-item" href="template/CadastroCliente.html">Cliente</a>
-                  <a class="dropdown-item" href="template/CadastroFornecedores.html">Fornecedores</a>
+                  <a class="dropdown-item" href="jsp/CadastroProduto.html">Produto</a>
+                  <a class="dropdown-item" href="jsp/CadastroCliente.html">Cliente</a>
+                  <a class="dropdown-item" href="jsp/CadastroFornecedores.html">Fornecedores</a>
                 </div>
             </li>
           </ul>
@@ -74,14 +76,14 @@
 <!-- Page Content -->
 
 <section id="main" class="container">
-	<form name="formfuncionario" id="formfuncionario" action="" method="post">
+	<form name="formproduto" id="formproduto" action="" method="post">
 
 			<fieldset>
-				<legend class="control-label">Dados do Funcionário</legend>
+				<legend class="control-label">Dados do Produto</legend>
 
 				<div class="row">
 					<div class="form-group col-md-12 col-sm-12">
-						<label for="email">E-mail:</label>
+						<!--<label for="email">email*:</label>-->
 						<!--&lt;!&ndash; USANDO HTML 5.0 para o tipo email - problema para personalizar mensagens de erro &ndash;&gt;-->
 						<!--<input type="email" class="form-control" name="email" maxlength="30" size="30" placeholder="usuario@meudominio.com" required-->
 							<!--pattern=“[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$” title="Informe um e-mail válido" />-->
@@ -139,7 +141,7 @@
 					</script>
 				</div>
 
-              <!--<div class="row">
+              <div class="row">
 
                     <div class="form-group col-md-4 col-sm-3">
                         <label for="pwd">Senha:</label>
@@ -150,7 +152,7 @@
 						<label for="pwd">Confirmar Senha*:</label>
 						<input type="password" id="confirmasenha" class="form-control" name="confirmasenha" maxlength="8" size="8" />
 					</div>
-              </div>-->
+              </div>
 
 				<div class="row">
 					<div class="form-group col-md-4 col-sm-6">
