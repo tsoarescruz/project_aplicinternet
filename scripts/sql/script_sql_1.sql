@@ -1,18 +1,16 @@
-drop database if exists lojaonline;
+drop database if exists pharmacia;
 
-create database lojaonline;
+create database pharmacia;
 
-use lojaonline;
+use pharmacia;
 
 create table usuario(
-email varchar(50) primary key,
-nome_cliente varchar(20) not null,
-senha varchar (20) not null,
-perfil char(3) not null,
-datcadastro timestamp
+email varchar(50) primary key, 
+nome varchar(50) not null,
+senha varchar(20) not null, /*senha - colocar criptografia*/
+perfil char(3) not null, /* CLI, FUN, ADM*/ 
+dtncadastro timestamp
 );
-
-//desc usuario;
 
 create table Cliente(
 cpf bigint primary key,
@@ -20,7 +18,8 @@ id_email varchar(50) not null,
 nome varchar(20),
 telefone varchar(15),
 celular varchar(15),
-dtnnasc date,
+dtnasc date,
+cep varchar(10),
 endereco varchar(50),
 numero int,
 complemento varchar (50),
@@ -29,52 +28,69 @@ cidade varchar(25),
 estado varchar(2),
 inf_ref varchar(50),  
 sexo enum('M', 'F', 'O'),
-dtnascimento date,
 foreign key (id_email) references usuario (email)
 );
 
 create table Produto(
 codigo int auto_increment primary key,
+nome varchar(20),
 descricao varchar(100),
 categoria int,
 marca varchar(40),
-nome varchar(20),
-//tamroupa varchar(3),
-//ntamroupa int,
-//tamcalcado int,  
-preco double(10,2) not null,
 percdesconto double (2,1),
-  
+valor double(10,2) not null,
+parcelamento enum('S','N'),
+destaque enum('S','N'),
+dtninicomerc date,
+qtdestoque int,
+foto1 varchar(50),
+foto2 varchar(50),
+foto3 varchar(50),
+foto4 varchar(50)
+
 constraint pk_produto primary key (codigo),
 foreign key (id_email) references usuario (email),
 );
 
-//create table Entrega(
-//id_entregador int,
-//cpf_entregador varchar(15),
-//nome_entregador varchar(20),
-//disponivel tinyint,
-//constraint pk_entregador primary key(id_entregador)
-//);
-
 create table Pedido(
-id_pedido int,
+id_pedido auto_increment,
 cpf bigint,
 preco_venda double,
+dtn_pedido date,
 
-constraint pk_venda primary key (id_venda),
-constraint fg_venda_cliente foreign key (id_cliente) references Cliente(id_cliente)
+constraint pk_venda, id_pedido primary key (id_venda),
+constraint fg_venda_cliente foreign key (cpf) references Cliente(cpf)
 
 foreign key (cpf) references usuario (cliente),
 );
 
-create table iten_pedido(
-id_registro int,
-id_cliente int,
+create table Item_venda(
+id_item_venda int,
+id_pedido int,
+cpf int,
 id_venda int,
-id_entregador int,
-data_registro  datetime,
-constraint pk_registro primary key (id_registro),
-constraint fg_registro_cliente foreign key(id_cliente) references Cliente(id_cliente),
-constraint fg_registro_venda foreign key(id_venda) references Venda(id_venda),
-constraint fg_registro_entregador foreign key(id_entregador) references Entregador(id_entregador)
+
+data_venda  datetime,
+
+constraint pk_pedido primary key (id_pedido),
+
+constraint fk_cpf foreign key(cpf) 
+references Cliente(cpf),
+
+constraint fk_id_venda foreign key(id_venda) references Venda(id_venda),
+
+create table Venda(
+id_venda int,
+id_item_venda int,
+id_pedido int,
+data_venda  datetime,
+
+constraint pk_id_venda primary key (id_venda),
+
+constraint fk_id_item_venda foreign key(id_venda) 
+references Item_venda(id_item_venda),
+
+constraint fk_id_pedido foreign key(id_pedido) 
+references Pedido(id_pedido),
+
+constraint fk_item_venda foreign key(id_venda) references Venda(id_venda),
