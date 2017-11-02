@@ -38,6 +38,7 @@
   <body>
 
  <!-- Navigation -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Pharmácia</a>
@@ -63,7 +64,7 @@
                   <a class="dropdown-item" href="../jsp/CadastroCliente.html">Clientes</a>
                   <a class="dropdown-item" href="../jsp/CadastroFornecedores.html">Fornecedores</a>
 				  <a class="dropdown-item" href="../jsp/CadastroFuncionarios.html">Funcionários</a>
-				  <a class="dropdown-item" href="../jsp/CadastroProdutoS.html">Produtos</a>
+				  <a class="dropdown-item" href="../jsp/CadastroProdutos.html">Produtos</a>
 
 				</div>
             </li>
@@ -119,17 +120,10 @@
 						<input type="text" id="cpf" class="form-control" name="cpf" maxlength="14" />
 					</div>
 
-                    <!--Ver essa validacao de data no lojaonlineJQ.js
-                    O mesmo script esta sendo repassado la
-                    este script aqui esta funcionando, mais posso fazer a validacao por la-->
                     <div class='col-md-4 col-sm-4'>
 						<label for="datanascimento">Data de Nascimento*:</label>
 							<div class="input-group date">
 								<input id="dtnasc" type="text" class="form-control">
-								<!-- value="18/09/2017"
-								<div class="input-group-addon">
-									<span class="glyphicon glyphicon-calendar"></span>
-								</div>-->
 							</div>
 					</div>
 					<script>
@@ -143,12 +137,12 @@
               <div class="row">
 
                     <div class="form-group col-md-4 col-sm-3">
-                        <label for="pwd">Senha:</label>
+                        <label for="password">Senha:</label>
                         <input type="password" id="senha" class="form-control" name="senha" maxlength="8" size="8" />
                     </div>
 
 					<div class="form-group col-md-4 col-sm-3">
-						<label for="pwd">Confirmar Senha*:</label>
+						<label for="password">Confirmar Senha*:</label>
 						<input type="password" id="confirmasenha" class="form-control" name="confirmasenha" maxlength="8" size="8" />
 					</div>
               </div>
@@ -256,6 +250,7 @@
                       </div>
                   </div>
               </fieldset>
+
             <!-- Separação btn -->
             <div class="row">
                   <div class="form-group col-md-12 col-sm-12">
@@ -289,7 +284,6 @@
     <div class="container">
       <p class="m-0 text-center text-white">Copyright © Pharmácia 2017</p>
     </div>
-    <!-- /.container -->
   </footer>
 
   <!-- Bootstrap core JavaScript -->
