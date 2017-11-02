@@ -1,4 +1,6 @@
-/*Funções Java Script para o formulário - com Jquery*/
+/*
+Funções Java Script para o formulário - com Jquery
+*/
 
 /*
  * A função LOAD abaixo pode também ser escrita das seguintes formas:
@@ -17,19 +19,22 @@
  *   
  */
 
-/*Comandos que serão executados com a página for carregada*/
+/*
+Comandos que serão executados com a página for carregada
+*/
+
 $(function() {
   	
-    /* Ação do botão voltar */
+    /*
+    Ação do botão voltar
+    */
     $(".btvoltar").click(function(){window.location.href='indexBS.jsp';});
     $(".btvoltarcons").click(function(){window.location.href='ConsultarClienteBS.jsp';}); 
-    /***********************************************************************/
-    
-    /* Sumir com todas as medidas*/
-    $("#cbotamanhoroupa").hide(); $("#tamanhonum").hide(); $("#tamanhocalcado").hide(); 
-    
-        
-    /*Máscara dos campos com Jquery - biblioteca JQUERY- MASKED INPUT*/ 
+
+    /*
+    Máscara dos campos com Jquery - Biblioteca Jquery Masked Input
+    */
+    $("#cnpj").mask("99.999.999/9999-99");
     $(".data").mask("99/99/9999");
     $("#telefone").mask("(99) 9999-9999");
     $("#celular").mask("(99) 99999-9999");
@@ -40,7 +45,9 @@ $(function() {
     $(".2dignum").mask("99");
     $(".percentual").mask("9?9%");
     
-    /*Jquery UI para exibição de calendário*/
+    /*
+    Jquery UI para exibição de calendario
+    */
     $( "#datanascimento" ).datepicker({
     	dateFormat: 'dd/mm/yy', /*formato Brasil*/
     	showOn: "button",
@@ -49,7 +56,9 @@ $(function() {
         buttonText: "Select date"
     });    
     
-    /* Máscara dos campos com valor monetário - biblioteca JQUERY MASK MONEY */
+    /*
+    Máscara dos campos com valor monetário - Biblioteca Jquery Mask Money
+    */
     $(".dinheiro").maskMoney({showSymbol:true, symbol:"R$ ", decimal:",", thousands:"."});   
     
     /*
@@ -65,7 +74,9 @@ $(function() {
      * */
     
     
-    /*Regras de validação dos campos do form CLIENTE - biblioteca JQUERY VALIDATION*/
+    /*
+    Regras de validação dos campos do form Cliente - Biblioteca Jquery Validation
+    */
     $("#formcliente").validate({
         rules: {
             email:{required: false},
@@ -99,11 +110,11 @@ $(function() {
                         equalTo:"As senhas informadas não conferem."},
             rbsexo:{required: "Informe o sexo"},
             cpf:{required: "Informe o número do CPF"},
-            dtnasc:{required: "Informe a data de nascimento", dateBR:"Informe uma data de nascimento válida "},
+            dtnasc:{required: "Informe a data de nascimento", dateBR:"Informe uma data de nascimento válida"},
             telefone:{required: "Informe o telefone"},            
             cbocategoria:{required: "Informe o tipo de endereço"},
             cep:{required: "Informe o CEP"},                        
-            endereco:{required: "Informe o Endereco"},
+            endereco:{required: "Informe o endereco"},
             numero:{required: "Informe o Número"},
             bairro:{required: "Informe o Bairro"},
             cidade:{required: "Informe a Cidade"},
@@ -111,12 +122,16 @@ $(function() {
             inforef:{required:"Informe dados de referência do endereço"}            
         },
     
-        //Monta a mensagem em uma caixa separada
+        /*
+        Monta a mensagem em uma caixa separada
+        */
         errorLabelContainer: $("#mensagens"),
         errorElement: "li"
     });
  
-   //Fazer as validacoes iguais ao de produto, com os campos
+    /*
+    Regras de validação dos campos do form Fornecedor - Biblioteca Jquery Validation
+    */
     $("#formfornecedor").validate({
         rules: {
 
@@ -159,7 +174,10 @@ $(function() {
         errorLabelContainer: $("#mensagens"),
         errorElement: "li"
     });
-    /*Regras de validação dos campos do form PRODUTO - biblioteca JQUERY VALIDATION*/
+
+    /*
+    Regras de validação dos campos do form Produto - Biblioteca Jquery Validation
+    */
     $("#formproduto").validate({
         rules: {            
         	descrproduto:{required: true, minlength: 6},
@@ -181,23 +199,28 @@ $(function() {
         				  minlength:"Informe uma descrição com ao menos 6 caracteres" },
         	cbocategoria:{required: "Informe a categoria do produto"},
         	marca:{required: "Informe a marca do produto"},
-        	cbotamanhoroupa:{required: "Informe o tamanho da roupa"},
-        	tamanhonum:{required: "Informe o tamanho da roupa"},
-        	tamanhosapato:{required: "Informe o tamanho do sapato"},
-        	valorproduto:{required: "Informe o valor do produto"},        	
+        	valorproduto:{required: "Informe o valor do produto"},
         	pagtoparcelado:{required: "Informe se o pagamento será parcelado"},
         	dataproduto:{required: "Informe a data de início de comercialização do produto",
         				dateBR:"Informe uma data válida"},
         	qtdestoque:{required: "Informe a quantidade em estoque"}        	
         },
     
-        //Monta a mensagem em uma caixa separada
+        /*
+        Monta a mensagem em uma caixa separada
+        */
         errorLabelContainer: $("#mensagens"),
         errorElement: "li"
     });
     
     
-    /* Exibir tipos de tamanho, conforme a categoria do produto */
+    /*
+    Exibir tipos de tamanho, conforme a categoria do produto
+    */
+
+    /*
+    Este metodo aqui nao esta sendo usado, porem pode ser utilizado para poder fazer o load com JSP
+    */
     $("#cbocategoria").change(function(){    	
     	var categoria = $("#cbocategoria").val();
     	
@@ -216,10 +239,15 @@ $(function() {
     	/* A função Jquery "toggle" mostra se estava escondido ou esconde se estava sendo exibido*/
     });
     
-    $("#cbocategoria").trigger("change"); /* OBS: COLOCADO PARA FAZER UM GATILHO COM O EVENTO CHANGE 
-    QUANDO A PÁGINA FOR CARREGADA PELA CONSULTA - OBJETIVO DE EXBIR O TAMANHO*/
+    $("#cbocategoria").trigger("change");
+    /*
+    Obs: colocado para fazer um gatilho com o evento change
+    quando a página for carregada pela consulta - objetivo de exbir o tamanho
+    */
     
-    /*Limpar campos de um form quando o usuário clicar no botão Limpar */    
+    /*
+    Limpar campos de um form quando o usuário clicar no botão Limpar
+    */
     $(".btnlimpar").click(function(){
     	$('form').each (function(){
     		  this.reset();
@@ -227,4 +255,7 @@ $(function() {
     });
     
     
-}); //FUNÇÃO LOAD
+});
+/*
+Funcao Load
+*/
