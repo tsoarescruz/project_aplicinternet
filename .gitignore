@@ -2,7 +2,7 @@ media/
 static/
 *.pyc
 *.pyo
-#.idea
+.idea
 .*/*
 */*.idea
 dump.rdb
@@ -21,3 +21,5 @@ test_results.xml
 <fdopen>
 oracle.db
 /build/
+/JSP/WebApp/nbproject/private/
+
