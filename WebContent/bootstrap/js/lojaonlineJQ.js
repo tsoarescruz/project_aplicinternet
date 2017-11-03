@@ -35,6 +35,7 @@ $(function() {
     Máscara dos campos com Jquery - Biblioteca Jquery Masked Input
     */
     $("#cnpj").mask("99.999.999/9999-99");
+    $("#lote").mask("99.999.999-9");
     $(".data").mask("99/99/9999");
     $("#telefone").mask("(99) 9999-9999");
     $("#celular").mask("(99) 99999-9999");
@@ -179,36 +180,44 @@ $(function() {
     Regras de validação dos campos do form Produto - Biblioteca Jquery Validation
     */
     $("#formproduto").validate({
-        rules: {            
-        	descrproduto:{required: true, minlength: 6},
-        	cbocategoria:{required: true},
-        	marca:{required: true},
-        	cbotamanhoroupa:{required: true},
-        	tamanhonum:{required: true},
-        	tamanhosapato:{required: true},        	
-        	valorproduto:{required: true},
-        	percdesconto:{required: false},
-        	pagtoparcelado:{required: true},
-        	proddestaque:{required: false},
-        	dataproduto:{required: true, dateBR:true},
-        	qtdestoque:{required: true}                        
+        rules: {
+
+        	lote:{required: true, minlength: 6},
+        	email:{required: false},
+        	nome:{required: true},
+        	dtvalidade:{required: true, dateBR:true},
+        	telefone:{required: true},
+            celular:{required: true},
+            cep:{required: true},
+        	endereco:{required: true},
+        	numero:{required: true},
+        	bairro:{required: true},
+        	cidade:{required: true},
+        	cboestado:{required: true},
+        	cbocategoria:{required: false},
         },
-    
-        messages: {        	
-        	descrproduto:{required: "Informe a descrição do produto",
-        				  minlength:"Informe uma descrição com ao menos 6 caracteres" },
-        	cbocategoria:{required: "Informe a categoria do produto"},
-        	marca:{required: "Informe a marca do produto"},
-        	valorproduto:{required: "Informe o valor do produto"},
-        	pagtoparcelado:{required: "Informe se o pagamento será parcelado"},
-        	dataproduto:{required: "Informe a data de início de comercialização do produto",
+
+        messages: {
+        	lote:{required: "Informe um Lote válido",
+        				  minlength:"Informe um CNPJ com pelo menos 6 caracteres" },
+        	email:{required: "Informe um E-mail válido"},
+        	nome:{required: "Informe um Nome Fantasia válido"},
+        	dtcadastro:{required: "Informe a data de início de cadastro do fornecedor",
         				dateBR:"Informe uma data válida"},
-        	qtdestoque:{required: "Informe a quantidade em estoque"}        	
+
+
+        	telefone:{required: "Informe um número de telefone válido"},
+        	celular:{required: "Informe um número de celular válido"},
+
+        	cep:{required: "Informe um número de CEP válido",
+        	            minlength:"Informe um CEP com pelo menos 8 caracteres" },
+        	endereco:{required: "Informe um Endereço válido"},
+        	numero:{required: "Informe um Número válido"},
+        	bairro:{required: "Informe um Bairro"},
+        	cidade:{required: "Informe uma Cidade"},
+        	cboestado:{required: "Informe um Estado"},
         },
-    
-        /*
-        Monta a mensagem em uma caixa separada
-        */
+            //Monta a mensagem em uma caixa separada
         errorLabelContainer: $("#mensagens"),
         errorElement: "li"
     });
