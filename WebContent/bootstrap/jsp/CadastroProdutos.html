@@ -79,21 +79,7 @@
 	<form name="formproduto" id="formproduto" action="" method="post">
 
 			<fieldset>
-				<legend class="control-label">Dados do Produto</legend>
-
-				<div class="row">
-					<div class="form-group col-md-12 col-sm-12">
-						<!--<label for="email">email*:</label>-->
-						<!--&lt;!&ndash; USANDO HTML 5.0 para o tipo email - problema para personalizar mensagens de erro &ndash;&gt;-->
-						<!--<input type="email" class="form-control" name="email" maxlength="30" size="30" placeholder="usuario@meudominio.com" required-->
-							<!--pattern=“[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$” title="Informe um e-mail válido" />-->
-
-                      <div class="input-group">
-                        <input type="text" class="form-control" name="email" id=email maxlength="30" size="30" placeholder="email" aria-describedby="basic-addon2">
-                        <span class="input-group-addon" id="basic-addon2">@example.com</span>
-                      </div>
-					</div>
-				</div>
+                <legend class="control-label">Dados do Produto</legend>
 
 				<div class="row">
 					<div class="form-group col-md-12 col-sm-12">
@@ -103,28 +89,17 @@
 				</div>
 
 				<div class="row">
-					<div class="form-group col-md-4 col-sm-4">
-						<label>Sexo*:</label><br>
-						<div class="form-check form-check-inline">
-							<label class="form-check-label">
-								<input class="form-check-input" type="radio" name="rbsexo" value="M" checked />Masculino
-							</label>
-							<label class="form-check-label">
-								<input class="form-check-input" type="radio" name="rbsexo" value="F" checked />Feminino
-							</label>
-						</div>
-					</div>
 
 					<div class="form-group col-md-4 col-sm-4">
-						<label for="cpf">CPF*:</label>
-						<input type="text" id="cpf" class="form-control" name="cpf" maxlength="14" />
+						<label for="lote">Lote*:</label>
+						<input type="text" id="lote" class="form-control" name="lote" maxlength="14" />
 					</div>
 
-                    <div class='col-md-4 col-sm-4'>
-						<label for="datanascimento">Data de Nascimento*:</label>
+                     <div class='col-md-4 col-sm-4'>
+						<label for="dtnvalidade">Data de Validade*:</label>
 							<div class="input-group date">
 								<input id="dtnasc" type="text" class="form-control">
-							</div>
+                            </div>
 					</div>
 					<script>
 						$('#dtnasc').datepicker({
@@ -132,139 +107,198 @@
 							startDate: '-3d'
 						});
 					</script>
+
+                    <div class='col-md-4 col-sm-4'>
+						<label for="datacadastro">Data de Cadastro*:</label>
+							<div class="input-group date">
+								<input id="dtcadastro" type="text" class="form-control">
+							</div>
+					</div>
+					<script>
+						$('#dtcadastro').datepicker({
+							format: 'dd/mm/yyyy',
+							startDate: '-3d'
+						});
+					</script>
 				</div>
 
-              <div class="row">
+                <div class="row">
 
-                    <div class="form-group col-md-4 col-sm-3">
-                        <label for="password">Senha:</label>
-                        <input type="password" id="senha" class="form-control" name="senha" maxlength="8" size="8" />
-                    </div>
-
-					<div class="form-group col-md-4 col-sm-3">
-						<label for="password">Confirmar Senha*:</label>
-						<input type="password" id="confirmasenha" class="form-control" name="confirmasenha" maxlength="8" size="8" />
+					<div class="form-group col-md-4 col-sm-4">
+						<label for="preco">Preco*:</label>
+						<input type="text" id="preco" class="form-control" name="preco" maxlength="14" />
 					</div>
-              </div>
+				</div>
+
+              </fieldset>
+              <fieldset>
+				<legend class="control-label">Dados do Fornecedor</legend>
+
+				<div class="row">
+					<div class="form-group col-md-4 col-sm-4">
+						<label for="CNPJ">CNPJ*:</label>
+						<input type="text" id="cnpj" class="form-control" name="cnpj" maxlength="14" />
+					</div>
+
+
+					<div class='col-md-4 col-sm-4'>
+						<label for="datacadastro">Data de Cadastro*:</label>
+							<div class="input-group date">
+								<input id="dtncadastro" type="text" class="form-control">
+							</div>
+					</div>
+					<script>
+						$('#dtncadastro').datepicker({
+							format: 'dd/mm/yyyy',
+							startDate: '-3d'
+						});
+					</script>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12 col-sm-12">
+						<label for="email">E-mail*:</label>
+						<div class="input-group">
+							<input type="text" class="form-control" name="email" id=email maxlength="30" size="30" placeholder="E-mail" aria-describedby="basic-addon2">
+							<span class="input-group-addon" id="basic-addon2">@example.com</span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="form-group col-md-12 col-sm-12">
+						<label for="nome">Nome*:</label>
+						<input type="text" class="form-control" name="nome" id="nome" maxlength="50" size="50" />
+					</div>
+				</div>
+
 
 				<div class="row">
 					<div class="form-group col-md-4 col-sm-6">
-						<label for="telcontato">Telefone para Contato*:</label>
+						<label for="telecontato">Telefone para Contato*:</label>
 						<input type="text" id="telefone" class="form-control" name="telefone" maxlength="14" />
 					</div>
 
 					<div class="form-group col-md-4 col-sm-6">
-						<label for="telcelular">Celular(opcional):</label>
+						<label for="telecelular">Celular(opcional):</label>
 						<input type="text" id="celular" class="form-control" name="celular" maxlength="15" />
 					</div>
 				</div>
 
-              <fieldset>
-                <legend class="control-label">Dados de Endereço</legend>
-                  <div class="row">
-                      <div class="form-group col-md-8 col-sm-8">
-                          <label for="cbocategoria">Tipo de Endereço*:</label>
-                          <select name="cbocategoria" id=cbocategoria class="form-control">
-                              <option value="0"> </option>
-                              <option value="1">Casa</option>
-                              <option value="2">Apartamento</option>
-                              <option value="3">Comercial</option>
-                              <option value="4">Outros</option>
-                          </select>
-                      </div>
-                      <div class="form-group col-md-4 col-sm-4">
-                          <label for="cep">CEP*:</label>
-                          <input type="text" id="cep" class="form-control" name="cep" id="cep" maxlength="10" size="10" />
-                      </div>
-                  </div>
+				<fieldset>
+					<legend class="control-label">Dados de Endereço</legend>
 
-                  <div class="row">
-                      <div class="form-group col-md-8 col-sm-8">
-                          <label for="endereco">Endereço*:</label>
-                          <input type="text" class="form-control" name="endereco" id="endereco" maxlength="50" size="50" />
+						<div class="row">
+							<div class="form-group col-md-4 col-sm-4">
+								<label for="cep">CEP*:</label>
+								<input type="text" id="cep" class="form-control" name="cep" maxlength="10" size="10" />
+							</div>
+							<div class="form-group col-md-8 col-sm-8">
+								<label for="cbocategoria">Tipo de Endereço*:</label>
+								<select name="cbocategoria" id=cbocategoria class="form-control">
+									<option value="0"> </option>
+									<option value="1">Casa</option>
+									<option value="2">Apartamento</option>
+									<option value="3">Comercial</option>
+									<option value="4">Outros</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-8 col-sm-8">
+								<label for="endereco">Endereço*:</label>
+								<input type="text" class="form-control" name="endereco" maxlength="50" size="50" />
+							</div>
+
+							<div class="form-group col-md-4 col-sm-4">
+								<label for="numero">Número*:</label>
+								<input type="text" class="form-control sonums" name="numero" maxlength="3" size="3" />
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-8 col-sm-8">
+								<label for="cbocomplemento">Complemento(opcional):</label>
+								<select name="cbocomplemento" id=cbocomplemento class="form-control">
+									<option value="0"> </option>
+									<option value="1">Casa</option>
+									<option value="2">Apartamento</option>
+									<option value="3">Comercial</option>
+									<option value="4">Outros</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-4 col-sm-4">
+								<label for="bairro">Bairro*:</label>
+								<input type="text" class="form-control" name="bairro" maxlength="25" size="25" />
+							</div>
+
+							<div class="form-group col-md-4 col-sm-4">
+								<label for="cidade">Cidade*:</label>
+								<input type="text" class="form-control" name="cidade" maxlength="25" size="25" />
+							</div>
+
+
+							<div class="form-group col-md-4 col-sm-4">
+                        	  <label for="estado">Estado*:</label>
+                            	<select name="cboestado" id="cboestado" class="form-control">
+								  <option value="" ></option>
+								  <option value="ac">AC</option>
+								  <option value="al">AL</option>
+								  <option value="ap">AP</option>
+								  <option value="am">AM</option>
+								  <option value="ba">BA</option>
+								  <option value="ce">CE</option>
+								  <option value="df">DF</option>
+								  <option value="es">ES</option>
+								  <option value="go">GO</option>
+								  <option value="ma">MA</option>
+								  <option value="mt">MT</option>
+								  <option value="ms">MS</option>
+								  <option value="mg">MG</option>
+								  <option value="pa">PA</option>
+								  <option value="pb">PB</option>
+								  <option value="pr">PR</option>
+								  <option value="pe">PE</option>
+								  <option value="pi">PI</option>
+								  <option value="rj">RJ</option>
+								  <option value="rn">RN</option>
+								  <option value="rs">RS</option>
+								  <option value="ro">RO</option>
+								  <option value="rr">RR</option>
+								  <option value="sc">SC</option>
+								  <option value="sp">SP</option>
+								  <option value="se">SE</option>
+								  <option value="to">TO</option>
+                           	 	</select>
+                        	</div>
                       </div>
 
-                      <div class="form-group col-md-4 col-sm-4">
-                          <label for="numero">Número*:</label>
-                          <input type="text" class="form-control sonums" name="numero" id="numeroendereco" maxlength="3" size="3" />
-                      </div>
-                  </div>
+					  <div class="row">
+							<div class="form-group col-md-12 col-sm-12">
+								<label for="ifreferencia">Informações de Referência*:</label>
+								<input type="text" class="form-control" name="inforef" maxlength="50" size="50" />
+							</div>
+					  </div>
+				</fieldset>
 
-                  <div class="row">
+                <!-- Separação btn -->
+                <div class="row">
                       <div class="form-group col-md-12 col-sm-12">
-                          <label for="enderecocomplemento">Complemento(opcional):</label>
-                          <input type="text" class="form-control" name="complemento" id="complemento"maxlength="50" size="50" />
+
                       </div>
-                  </div>
-
-                  <div class="row">
-                      <div class="form-group col-md-4 col-sm-4">
-                          <label for="bairro">Bairro*:</label>
-                          <input type="text" class="form-control" name="bairro" id="bairro" maxlength="25" size="25" />
-                      </div>
-
-                      <div class="form-group col-md-4 col-sm-4">
-                          <label for="cidade">Cidade*:</label>
-                          <input type="text" class="form-control" name="cidade" id="cidade" maxlength="25" size="25" />
-                      </div>
-
-                        <div class="form-group col-md-4 col-sm-4">
-                          <label for="estado">Estado*:</label>
-                            <select name="cboestado" id="cboestado" class="form-control">
-                              <option value="" ></option>
-                              <option value="ac">AC</option>
-                              <option value="al">AL</option>
-                              <option value="ap">AP</option>
-                              <option value="am">AM</option>
-                              <option value="ba">BA</option>
-                              <option value="ce">CE</option>
-                              <option value="df">DF</option>
-                              <option value="es">ES</option>
-                              <option value="go">GO</option>
-                              <option value="ma">MA</option>
-                              <option value="mt">MT</option>
-                              <option value="ms">MS</option>
-                              <option value="mg">MG</option>
-                              <option value="pa">PA</option>
-                              <option value="pb">PB</option>
-                              <option value="pr">PR</option>
-                              <option value="pe">PE</option>
-                              <option value="pi">PI</option>
-                              <option value="rj">RJ</option>
-                              <option value="rn">RN</option>
-                              <option value="rs">RS</option>
-                              <option value="ro">RO</option>
-                              <option value="rr">RR</option>
-                              <option value="sc">SC</option>
-                              <option value="sp">SP</option>
-                              <option value="se">SE</option>
-                              <option value="to">TO</option>
-                            </select>
-                        </div>
-                      </div>
-
-                  <div class="row">
-                      <div class="form-group col-md-12 col-sm-12">
-                          <label for="infreferencia">Informações de Referência*:</label>
-                          <input type="text" class="form-control" name="inforef" maxlength="50" size="50" />
-                      </div>
-                  </div>
-              </fieldset>
-
-            <!-- Separação btn -->
-            <div class="row">
-                  <div class="form-group col-md-12 col-sm-12">
-
-                  </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <input type="submit" id="btenviarcliente" value="Enviar" class="btn btn-primary" />
-                    <input type="button" class="btn btn-default btlimpar" value="Limpar" />
-                    <input type="button" class="btn btn-default btvoltar" value="Voltar" />
                 </div>
-            </div>
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<input type="submit" id="btenviarcliente" value="Enviar" class="btn btn-primary" />
+						<input type="button" class="btn btn-default btnlimpar" value="Limpar" />
+						<input type="button" class="btn btn-default btnvoltar" value="Voltar" />
+					</div>
+				</div>
 
                <!-- Separação do Footer -->
                 <div class="row">
