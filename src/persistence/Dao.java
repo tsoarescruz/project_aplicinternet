@@ -1,4 +1,4 @@
-package model.persistence;
+package persistence;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -28,7 +28,7 @@ public class Dao {
 	 */
 	private final String URL = "jdbc:mysql://localhost:3306/lojaonline";
 	private final String USER = "root";
-	private final String PASS = "050181";
+	private final String PASS = "root";
 	
 	protected void open()throws Exception{
 		/*

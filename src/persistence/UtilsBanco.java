@@ -1,4 +1,4 @@
-package model.persistence;
+package persistence;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;

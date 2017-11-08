@@ -1,8 +1,9 @@
-package model.persistence;
+package persistence;
 
 import java.sql.SQLException;
 import java.util.GregorianCalendar;
-import model.entity.Cliente;
+
+import persistence.Cliente;
 
 public class ClienteDao extends Dao{
 
