@@ -26,7 +26,7 @@ public class Dao {
 	/*
 	 * URL de conexao com o banco
 	 */
-	private final String URL = "jdbc:mysql://localhost:3306/lojaonline";
+	private final String URL = "jdbc:mysql://localhost:3306/pharmacia";
 	private final String USER = "root";
 	private final String PASS = "root";
 	
