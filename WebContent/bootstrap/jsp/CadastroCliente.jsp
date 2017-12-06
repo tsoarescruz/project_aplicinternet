@@ -30,7 +30,7 @@
     <!--LINK PARA O JQUERY MASK MONEY -->
     <script src="../js/jquery-maskmoney/jquery.maskmoney.js" type="text/javascript"></script>
 
-    <!--LINK PARA O JQUERY-UI - CALENDÃRIO - Fonte: https://jqueryui.com/ -->
+    <!--LINK PARA O JQUERY-UI - CALENDARIO - Fonte: https://jqueryui.com/ -->
     <link rel="stylesheet" href="../js/jquery-ui-1.11.4.custom/jquery-ui.css">
     <script src="../js/jquery-ui-1.11.4.custom/jquery-ui.min.js" type="text/javascript"></script>
   	<script src="../js/jquery-ui-1.11.4.custom/jquery-ui.js" type="text/javascript"></script>
@@ -39,13 +39,35 @@
 	<script src="../js/lojaonlineJQ.js"></script>
 
   </head>
-
   <body>
+<div id="main" class="container"> <!-- CONTAINER BS -->
+
+<hr>
+	<div id="mensagens">
+	${msg } <!-- INSERIDO NA AULA DE BACKEND -->	
+	</div>
+<hr>
+
+<!-- ************************ JSTL -tela de consulta***************** -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> <!-- Não usado -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> <!-- Não usado -->
+<!-- **************************************************************** -->
+
+<!-- **** adaptar form de cadastro para a alteraçao ******************-->
+<c:set var="url" value="cadcliente.html" />
+<c:set var="btenviar" value="Enviar" />
+
+<c:if test="${op eq 'C'}">
+	<c:set var="url" value="altcliente.html" />
+	<c:set var="btenviar" value="Alterar Cliente" />
+</c:if>
+<!-- ***************************************************************** -->
 
  <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">PharmÃ¡cia</a>
+        <a class="navbar-brand" href="#">Pharmácia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -87,13 +109,13 @@
 
 				<div class="row">
 					<div class="form-group col-md-12 col-sm-12">
-						<label for="email">E-mail:</label>
+						<label for="inputdefault">E-mail:</label>
 						<!--&lt;!&ndash; USANDO HTML 5.0 para o tipo email - problema para personalizar mensagens de erro &ndash;&gt;-->
 						<!--<input type="email" class="form-control" name="email" maxlength="30" size="30" placeholder="usuario@meudominio.com" required-->
 							<!--pattern=â[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$â title="Informe um e-mail vÃ¡lido" />-->
 
                       <div class="input-group">
-                        <input type="text" class="form-control" name="email" id=email maxlength="30" size="30" placeholder="usuario@example.com" aria-describedby="basic-addon2">
+                        <input type="email" class="form-control" name="email" id=email maxlength="30" size="30" placeholder="usuario@example.com" aria-describedby="basic-addon2" value="${c.email}">
                         <span class="input-group-addon" id="basic-addon2">@example.com</span>
                       </div>
 					</div>
@@ -101,8 +123,8 @@
 
 				<div class="row">
 					<div class="form-group col-md-12 col-sm-12">
-						<label for="nome">Nome Completo*:</label>
-						<input type="text" class="form-control" name="nome" id="nome" maxlength="50" size="50"/>
+						<label for="inputdefault">Nome Completo*:</label>
+						<input type="text" class="form-control" name="nome" id="nome" maxlength="50" size="50" value="${c.nome}"/>
 					</div>
 				</div>
 
@@ -110,20 +132,26 @@
 					<div class="form-group col-md-4 col-sm-4">
 						<label>Sexo*:</label><br>
 						<div class="form-check form-check-inline">
-							<label class="form-check-label">
-								<input class="form-check-input" type="radio" name="rbsexo" value="M" checked />Masculino
-							</label>
-							<label class="form-check-label">
-								<input class="form-check-input" type="radio" name="rbsexo" value="F" checked />Feminino
-							</label>
+							<label for="inputdefault">
+								<input class="form-check-input" type="radio" name="rbsexo" value="M" 
+								<c:if test= "${(c.sexo eq 'M')}">
+   									checked="checked"	
+   								</c:if>
+   								/>Masculino		
+								<input type="radio" name="rbsexo" value="F" 
+								<c:if test="${(c.sexo eq 'F')}">
+   									checked="checked"	
+   								</c:if>
+								/>Feminino
 						</div>
 					</div>
 
 					<div class="form-group col-md-4 col-sm-4">
 						<label for="cpf">CPF*:</label>
-						<input type="text" id="cpf" class="form-control" name="cpf" maxlength="14"/>
+						<input type="text" id="cpf" class="form-control" name="cpf" maxlength="14" value="${c.cpf}"/>
 					</div>
 
+					<!--Ver a data no exemplo do professor e se o datapicker pode ser usado aqui  -->
                     <div class='col-md-4 col-sm-4'>
 						<label for="datanascimento">Data de Nascimento*:</label>
 							<div class="input-group date">
