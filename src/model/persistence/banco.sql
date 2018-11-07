@@ -1,8 +1,8 @@
 /* Roteiro
  * Falta consulta alterar e excluir cliente
  * Listar tabela com dados produto (resumo) e abrir em detalhes todos os dados
- * Falta alteração nos dados do usuário/cliente
- * Falta exclusão (como vou fazer isso?)
+ * Falta alteraï¿½ï¿½o nos dados do usuï¿½rio/cliente
+ * Falta exclusï¿½o (como vou fazer isso?)
  * colocar senha criptografada com md5 no banco
  * 
  * Fazer o Manter produto
@@ -16,7 +16,7 @@
  * MATERIAL muito bom : http://docente.ifrn.edu.br/fellipealeixo/disciplinas/tads-2012/desenvolvimento-de-sistemas-web
  * 
  * 
- * Código de banco 1062 - primary key já existe
+ * Cï¿½digo de banco 1062 - primary key jï¿½ existe
  * 
  * */
 

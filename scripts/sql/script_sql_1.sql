@@ -34,19 +34,12 @@ foreign key (id_email) references usuario (email)
 create table Produto(
 codigo int auto_increment primary key,
 nome varchar(20),
-descricao varchar(100),
-categoria int,
-marca varchar(40),
-percdesconto double (2,1),
-valor double(10,2) not null,
-parcelamento enum('S','N'),
+preco double(10,2) not null,
+dtcadastro date,
+dtvalidade date,
 destaque enum('S','N'),
 dtninicomerc date,
 qtdestoque int,
-foto1 varchar(50),
-foto2 varchar(50),
-foto3 varchar(50),
-foto4 varchar(50)
 
 constraint pk_produto primary key (codigo),
 foreign key (id_email) references usuario (email),
